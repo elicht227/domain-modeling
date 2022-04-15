@@ -1,6 +1,5 @@
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS posts;
-DROP TABLE IF EXISTS followers;
 DROP TABLE IF EXISTS followings;
 DROP TABLE IF EXISTS comments;
 DROP TABLE IF EXISTS likes;
@@ -20,14 +19,10 @@ CREATE TABLE posts(
     file_name TEXT
 );
 
-CREATE TABLE followers(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER
-);
-
 CREATE TABLE followings(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER
+    follower_user_id INTEGER,
+    followed_user_id INTEGER
 );
 
 CREATE TABLE comments(
